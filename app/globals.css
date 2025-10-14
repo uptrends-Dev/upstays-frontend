@@ -6,3 +6,9 @@
   --color-lightGray: ;
  
 }
+.PropertyBannerBg{
+  background-image: url('/images/p4.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
