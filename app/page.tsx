@@ -2,6 +2,7 @@ import HeroSection from "@/components/website/landingPage/HeroSection";
 import PropertyBanner from "@/components/website/landingPage/PropertyBanner";
 import PropertyHero from "@/components/website/landingPage/PropertyHero";
 import ServicesWeProvide from "@/components/website/landingPage/ServicesWeProvide";
+import WhyChooseUs from "@/components/website/landingPage/WhyChooseUs";
 const items = [
   { title: "Residential", image: "/images/p3.jpg" },
   { title: "Industrial", image: "/images/p3.jpg" },
@@ -18,6 +19,7 @@ export default function Home() {
       />
       <PropertyHero />
       <PropertyBanner />
+      <WhyChooseUs />
     </div>
   );
 }
