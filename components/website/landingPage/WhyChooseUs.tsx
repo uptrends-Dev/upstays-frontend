@@ -57,14 +57,14 @@ export default function WhyChooseUs({
             </div>
 
             {/* floating blurb card */}
-            <div className="pointer-events-none absolute -bottom-8 left-1/2 z-10 w-[88%] -translate-x-1/2 rounded-xl border border-white/10 bg-neutral-900/70 p-6 backdrop-blur sm:w-[82%]">
+            <div className="pointer-events-none absolute -bottom-8 left-1/2 z-10 w-[88%] -translate-x-1/2 rounded-xl border border-white/20 bg-neutral-900/70 p-6 backdrop-blur sm:w-[82%]">
               <p className="text-center text-sm leading-relaxed text-neutral-200">
                 Inceptos per consectetur consequat proin. Lorem ipsum
                 consectetur consequat dolor sit amet, consectetur adipiscing
                 elit, sed do eiusmod tempor.
               </p>
               <div className="mt-5 flex justify-center">
-                <button className="pointer-events-auto inline-flex items-center gap-2 rounded-xl border border-white/10 bg-neutral-800 px-5 py-3 text-sm font-medium text-white shadow-inner transition hover:-translate-y-0.5 hover:bg-neutral-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-400">
+                <button className="pointer-events-auto inline-flex items-center gap-2 rounded-xl border border-white/10 bg-red px-5 py-3 text-sm font-medium text-white shadow-inner transition hover:-translate-y-0.5 hover:bg-red-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-400">
                   KNOW MORE
                   <ArrowRight className="h-4 w-4" />
                 </button>
@@ -81,10 +81,10 @@ export default function WhyChooseUs({
               Let Us Help You Get Your Dream Home
             </h2>
 
-            <ul className="mt-8  divide-y divide-white/10 rounded-2xl border border-white/10 bg-neutral-900/40">
+            <ul className="  mt-8  divide-y divide-white/10 rounded-2xl border border-white/10 bg-neutral-900/40">
               {FEATURES.map((f, i) => (
-                <li key={i} className="flex items-start gap-4 p-6">
-                  <span className="mt-1 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-rose-900/40 ring-1 ring-rose-400/30">
+                <li key={i} className=" group flex items-start gap-4 p-6">
+                  <span className="mt-1 inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-red ring-1 ring-rose-400/30 transition duration-200  group-hover:translate-x-[-10px] ">
                     <CheckCircle2 className="h-5 w-5" />
                   </span>
                   <div className="flex-1">
