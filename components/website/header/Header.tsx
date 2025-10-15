@@ -47,7 +47,7 @@ const Header: React.FC = () => {
           <div className="hidden md:flex items-center space-x-4">
             <Link
               href="/contact"
-              className=" cursor-pointer px-4 py-2 bg-blue-600 text-white rounded-full duration-200 hover:bg-blue-700 transition"
+              className=" cursor-pointer px-4 py-2   text-black font-bold border-2 border-red rounded-2xl duration-200 hover:bg-red hover:text-white transition"
             >
               Contact Us
             </Link>

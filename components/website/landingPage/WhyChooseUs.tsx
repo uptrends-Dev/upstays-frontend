@@ -1,7 +1,8 @@
+'use client'
 import React from "react";
 import { CheckCircle2, ArrowRight } from "lucide-react";
 import Image from "next/image";
-
+import { motion } from "framer-motion";
 /**
  * WhyChooseUs Section (TSX + Tailwind)
  * -------------------------------------------------
@@ -39,10 +40,15 @@ export default function WhyChooseUs({
       {/* top accent line */}
       <div className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-red via-red-300 to-red" />
 
-      <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+      <div className=" overflow-hidden mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
           {/* Left: Person / visual + blurb card */}
-          <div className="relative h-[60vh] ">
+          <motion.div
+          initial={{x:-50 , opacity:0}}
+          whileInView={{x:0 , opacity:1}}
+          transition={{duration:0.5}}
+          viewport={{once:true}}
+          className="relative h-[60vh] ">
             <div className="  h-[55vh] relative z-0  w-full overflow-hidden rounded-2xl bg-neutral-800/50 ring-1 ring-white/10">
               {/* image */}
               {/* Use next/image in Next.js if desired */}
@@ -70,10 +76,15 @@ export default function WhyChooseUs({
                 </button>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right: content */}
-          <div className="relative ">
+          <motion.div
+          initial={{x:50 , opacity:0}}
+          whileInView={{x:0 , opacity:1}}
+          transition={{duration:0.5}}
+          viewport={{once:true}}
+          className="relative ">
             <p className="text-xs font-semibold tracking-widest text-neutral-300/70">
               WHY CHOOSE US?
             </p>
@@ -98,7 +109,7 @@ export default function WhyChooseUs({
                 </li>
               ))}
             </ul>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
