@@ -1,9 +1,8 @@
-import React from 'react'
+"use client";
+import AllProperties from "@/components/website/allProperties/AllProperties";
 
 const page = () => {
-  return (
-    <div>page</div>
-  )
-}
+  return <AllProperties />;
+};
 
-export default page
+export default page;
