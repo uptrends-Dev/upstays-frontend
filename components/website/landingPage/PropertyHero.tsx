@@ -1,10 +1,12 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { MapPin } from "lucide-react";
-
+import { getAllProperies } from "@/lib/apis/propertyApi";
+import ProoertyCard from "@/components/utils/ProoertyCard";
+// import {NewProperty} from '@/types/propertyType'
 type ServiceItem = {
   kind: "service";
   title: string;
@@ -101,66 +103,42 @@ const Card: React.FC<{ item: Item }> = ({ item }) => {
   );
 };
 
-const Section: React.FC<SectionProps> = ({ heading, subheading, items }) => (
-  <section className="mx-auto w-full max-w-7xl px-4 py-12">
-    <div className="mb-10 text-center">
-      <div className="mx-auto mb-3 h-1 w-24 rounded bg-red-500" />
-      <h2 className="text-3xl font-extrabold tracking-tight md:text-4xl">
-        {heading}
-      </h2>
-      {subheading && (
-        <p className="mx-auto mt-3 max-w-3xl text-balance text-sm text-muted-foreground md:text-base">
-          {subheading}
-        </p>
-      )}
-    </div>
-
-    <div className={`grid grid-cols-1  gap-8 md:grid-cols-2 lg:grid-cols-3`}>
-      {items.map((item, index) => (
-        <Card key={index} item={item} />
-      ))}
-    </div>
-  </section>
-);
-
 const PropertyHero: React.FC = () => {
-  const propertyItems: PropertyItem[] = [
-    {
-      kind: "property",
-      title: "Sweet Home for Small Family",
-      image: "/images/p4.jpg",
-      location: "Boston, USA",
-      description: "Till the one day when the lady met this fellow...",
-      price: "$256,596",
-      status: "FOR RENT",
-    },
-    {
-      kind: "property",
-      title: "Sweet Home for Small Family",
-      image: "/images/p4.jpg",
-      location: "Boston, USA",
-      description: "Till the one day when the lady met this fellow...",
-      price: "$256,596",
-      status: "FOR RENT",
-    },
-    {
-      kind: "property",
-      title: "Sweet Home for Small Family",
-      image: "/images/p4.jpg",
-      location: "Boston, USA",
-      description: "Till the one day when the lady met this fellow...",
-      price: "$256,596",
-      status: "FOR SALE",
-    },
-  ];
+  const [items, setItems] = useState<[]>([]);
 
+  useEffect(() => {
+    (async () => {
+      try {
+        const res = await getAllProperies();
+        const data = res.data;
+        setItems(data ?? []);
+        console.log(data);
+      } catch (e) {
+        console.error(e);
+      }
+    })();
+  }, []);
   return (
     <div>
-      <Section
-        heading="New Properties List"
-        subheading="The weather started getting rough..."
-        items={propertyItems}
-      />
+      <section className="mx-auto w-full max-w-7xl px-4 py-12">
+        <div className="mb-10 text-center">
+          <div className="mx-auto mb-3 h-1 w-24 rounded bg-red-500" />
+          <h2 className="text-3xl font-extrabold tracking-tight md:text-4xl">
+            New Properties List
+          </h2>
+
+          <p className="mx-auto mt-3 max-w-3xl text-balance text-sm text-muted-foreground md:text-base">
+            The weather started getting rough...
+          </p>
+          <div
+            className={`grid grid-cols-1  gap-8 md:grid-cols-2 lg:grid-cols-3`}
+          >
+            {items.map((e, i) => (
+              <ProoertyCard item={e} key={i} />
+            ))}
+          </div>
+        </div>
+      </section>
     </div>
   );
 };

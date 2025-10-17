@@ -43,13 +43,13 @@ const HeroSection: React.FC = () => {
               className="absolute inset-0 bg-black/50"
               aria-hidden="true"
             ></div>
-              <div className="absolute inset-0 z-10 flex flex-col items-center justify-center p-6 text-white text-center">
+            <div className="absolute inset-0 z-10 flex flex-col items-center justify-center p-6 text-white text-center">
               <div className="rounded-2xl bg-white/10 ring-1 ring-white/10 backdrop-blur-xl px-6 py-5 md:px-10 md:py-8 shadow-[0_10px_30px_rgba(0,0,0,0.25)]">
                 <motion.h1
                   initial={{ y: -50, opacity: 0 }}
                   animate={{ y: 1, opacity: 1 }}
                   transition={{
-                    duration : 0.8,
+                    duration: 0.8,
                     ease: "linear",
                   }}
                   viewport={{ once: true }}
