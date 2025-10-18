@@ -10,12 +10,9 @@ const ProoertyCard: React.FC<{ item: Property }> = ({ item }) => {
     <section>
       <motion.article className="group relative overflow-hidden rounded-xl shadow-md ring-1 ring-black/5">
         <div className="relative aspect-[4/3] w-full">
-          <Image
-
-            src={item.propertyImages[0]}
+          <img
+            src={item?.propertyImages?.[0]}
             alt={item.title}
-            fill
-            priority
             className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
           />
         </div>

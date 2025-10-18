@@ -1,3 +1,4 @@
+import ContactSection from "@/components/website/landingPage/ContactSection";
 import HeroSection from "@/components/website/landingPage/HeroSection";
 import PropertyBanner from "@/components/website/landingPage/PropertyBanner";
 import PropertyHero from "@/components/website/landingPage/PropertyHero";
@@ -20,6 +21,7 @@ export default function Home() {
       <PropertyHero />
       <PropertyBanner />
       <WhyChooseUs />
+      <ContactSection />
     </div>
   );
 }
