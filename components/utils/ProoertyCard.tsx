@@ -13,7 +13,7 @@ const ProoertyCard: React.FC<{ item: Property }> = ({ item }) => {
           <img
             src={item?.propertyImages?.[0]}
             alt={item.title}
-            className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            className=" w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
           />
         </div>
 
